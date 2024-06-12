@@ -1,6 +1,6 @@
 def check_element_and_remove(ele):
     my_Set = {8, 4, 6, 54}
-    print("before discarding element:", ele)
+    print("before discarding element:", my_Set)
     for i in my_Set.copy():  
         if i == ele:
             my_Set.discard(ele)
