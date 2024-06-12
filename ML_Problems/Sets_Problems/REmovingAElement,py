@@ -1,0 +1,25 @@
+
+my_set = {1, 2, 3, 4, 5}
+
+print("Set before removing 3:", my_set)
+
+my_set.remove(3)
+
+
+print("Set after removing 3:", my_set)
+
+
+print("Set before removing 5:", my_set)
+
+
+my_set.discard(5)
+
+
+print("Set after removing 5:", my_set)
+
+
+removed_item = my_set.pop()
+
+
+print("Set after removing an arbitrary item:", my_set)
+print("Removed item:", removed_item)
