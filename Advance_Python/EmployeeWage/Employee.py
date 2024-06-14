@@ -1,23 +1,27 @@
 import random
 
 def display_welcome_message():
-    print("Welcome to Employee Wage Computation ")
+    print("Welcome to Employee Wage Computation Program")
+
 def check_attendance():
     
-    return random.choice([0, 1])
+    return random.choice([0, 1, 2])
 
-def calculate_daily_wage():
+def calculate_daily_wage(attendance):
     wage_per_hour = 20
     full_day_hours = 8
+    part_time_hours = 4
 
-    attendance = check_attendance()
-    if attendance == 1:
-        daily_wage = wage_per_hour * full_day_hours
-        print(f"Employee is Present. Daily Wage: Rs:=> {daily_wage}")
-    else:
-        print("Employee is Absent. No Wage Earned.")
+    switch = {
+        0: lambda: print("Employee is Absent. No Wage Earned."),
+        1: lambda: print(f"Employee is Full-time Present. Daily Wage: Rs {wage_per_hour * full_day_hours}"),
+        2: lambda: print(f"Employee is Part-time Present. Daily Wage: Rs {wage_per_hour * part_time_hours}")
+    }
+
+    
+    switch.get(attendance, lambda: None)()
 
 
 display_welcome_message()
-calculate_daily_wage()
-
+attendance = check_attendance()
+calculate_daily_wage(attendance)
